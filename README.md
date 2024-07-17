@@ -1,6 +1,6 @@
 **Still WIP**
 
-This repository is a simple demonstration of Spin's component dependencies features.
+This repository is a simple demonstration of Spin's component dependencies feature.
 This example uses two component `cat-facts-app` and `cat-facts-dep` where the former
 uses the latter as a dependency.
 
