@@ -44,3 +44,5 @@ by applying the `spin-virt-deny-all` adapter to each dependency.
 
 
 TODO: Write `cat-facts-dep` so it uses an `allowed_outbound_hosts` configuration and demonstrate that the configuration inheritance toggle is enforced to allow or disallow access.
+
+TODO: Move this into spin/examples
