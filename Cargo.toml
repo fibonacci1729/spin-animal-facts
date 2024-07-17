@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "cat-facts-app",
+    "cat-facts-dep",
+]

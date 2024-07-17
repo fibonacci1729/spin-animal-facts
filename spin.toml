@@ -1,0 +1,19 @@
+spin_manifest_version = 2
+
+[application]
+name = "spin-cat-facts"
+version = "0.1.0"
+description = "A simple demonstration of using component dependencies"
+
+[[trigger.http]]
+route = "/..."
+component = "spin-cat-facts"
+
+[component.spin-cat-facts]
+source = "target/wasm32-wasi/release/cat_facts_app.wasm"
+allowed_outbound_hosts = [] # TODO: specify cat facts API host
+dependencies_inherit_configuration = true
+[component.spin-cat-facts.build]
+command = "cargo build --manifest-path cat-facts-app/Cargo.toml --target wasm32-wasi --release"
+[component.spin-cat-facts.dependencies]
+"component:cat-facts/cat-facts" = { path = "target/wasm32-wasi/release/cat_facts_dep.wasm" }
