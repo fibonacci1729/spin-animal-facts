@@ -1,5 +1,5 @@
 [package]
-name = "cat-facts-app"
+name = "animal-facts-app"
 description = "A simple demonstration of using component dependencies"
 version = "0.1.0"
 edition = "2021"

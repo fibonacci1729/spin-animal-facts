@@ -1,0 +1,10 @@
+package component:animal-facts;
+
+interface animal-facts {
+    /// Get a random animal fact.
+    get-random-fact: func() -> result<string, string>;
+}
+
+world animal-facts-dep {
+    export animal-facts;
+}

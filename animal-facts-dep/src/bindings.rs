@@ -5,9 +5,9 @@ pub mod exports {
     #[allow(dead_code)]
     pub mod component {
         #[allow(dead_code)]
-        pub mod cat_facts {
+        pub mod animal_facts {
             #[allow(dead_code, clippy::all)]
-            pub mod cat_facts {
+            pub mod animal_facts {
                 #[used]
                 #[doc(hidden)]
                 #[cfg(target_arch = "wasm32")]
@@ -61,26 +61,26 @@ pub mod exports {
                     }
                 }
                 pub trait Guest {
-                    /// Get a random cat fact.
+                    /// Get a random animal fact.
                     fn get_random_fact() -> Result<_rt::String, _rt::String>;
                 }
                 #[doc(hidden)]
 
-                macro_rules! __export_component_cat_facts_cat_facts_cabi{
+                macro_rules! __export_component_animal_facts_animal_facts_cabi{
         ($ty:ident with_types_in $($path_to_types:tt)*) => (const _: () = {
 
-          #[export_name = "component:cat-facts/cat-facts#get-random-fact"]
+          #[export_name = "component:animal-facts/animal-facts#get-random-fact"]
           unsafe extern "C" fn export_get_random_fact() -> *mut u8 {
             $($path_to_types)*::_export_get_random_fact_cabi::<$ty>()
           }
-          #[export_name = "cabi_post_component:cat-facts/cat-facts#get-random-fact"]
+          #[export_name = "cabi_post_component:animal-facts/animal-facts#get-random-fact"]
           unsafe extern "C" fn _post_return_get_random_fact(arg0: *mut u8,) {
             $($path_to_types)*::__post_return_get_random_fact::<$ty>(arg0)
           }
         };);
       }
                 #[doc(hidden)]
-                pub(crate) use __export_component_cat_facts_cat_facts_cabi;
+                pub(crate) use __export_component_animal_facts_animal_facts_cabi;
                 #[repr(align(4))]
                 struct _RetArea([::core::mem::MaybeUninit<u8>; 12]);
                 static mut _RET_AREA: _RetArea = _RetArea([::core::mem::MaybeUninit::uninit(); 12]);
@@ -125,24 +125,24 @@ mod _rt {
 #[allow(unused_macros)]
 #[doc(hidden)]
 
-macro_rules! __export_cat_facts_dep_impl {
+macro_rules! __export_animal_facts_dep_impl {
   ($ty:ident) => (self::export!($ty with_types_in self););
   ($ty:ident with_types_in $($path_to_types_root:tt)*) => (
-  $($path_to_types_root)*::exports::component::cat_facts::cat_facts::__export_component_cat_facts_cat_facts_cabi!($ty with_types_in $($path_to_types_root)*::exports::component::cat_facts::cat_facts);
+  $($path_to_types_root)*::exports::component::animal_facts::animal_facts::__export_component_animal_facts_animal_facts_cabi!($ty with_types_in $($path_to_types_root)*::exports::component::animal_facts::animal_facts);
   )
 }
 #[doc(inline)]
-pub(crate) use __export_cat_facts_dep_impl as export;
+pub(crate) use __export_animal_facts_dep_impl as export;
 
 #[cfg(target_arch = "wasm32")]
-#[link_section = "component-type:wit-bindgen:0.25.0:cat-facts-dep:encoded world"]
+#[link_section = "component-type:wit-bindgen:0.25.0:animal-facts-dep:encoded world"]
 #[doc(hidden)]
-pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 243] = *b"\
-\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07p\x01A\x02\x01A\x02\x01\
-B\x03\x01j\x01s\x01s\x01@\0\0\0\x04\0\x0fget-random-fact\x01\x01\x04\x01\x1dcomp\
-onent:cat-facts/cat-facts\x05\0\x04\x01!component:cat-facts/cat-facts-dep\x04\0\x0b\
-\x13\x01\0\x0dcat-facts-dep\x03\0\0\0G\x09producers\x01\x0cprocessed-by\x02\x0dw\
-it-component\x070.208.1\x10wit-bindgen-rust\x060.25.0";
+pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 258] = *b"\
+\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07|\x01A\x02\x01A\x02\x01\
+B\x03\x01j\x01s\x01s\x01@\0\0\0\x04\0\x0fget-random-fact\x01\x01\x04\x01#compone\
+nt:animal-facts/animal-facts\x05\0\x04\x01'component:animal-facts/animal-facts-d\
+ep\x04\0\x0b\x16\x01\0\x10animal-facts-dep\x03\0\0\0G\x09producers\x01\x0cproces\
+sed-by\x02\x0dwit-component\x070.208.1\x10wit-bindgen-rust\x060.25.0";
 
 #[inline(never)]
 #[doc(hidden)]

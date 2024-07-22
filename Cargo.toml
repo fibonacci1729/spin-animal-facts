@@ -1,5 +1,5 @@
 [workspace]
 members = [
-    "cat-facts-app",
-    "cat-facts-dep",
+    "animal-facts-app",
+    "animal-facts-dep",
 ]
